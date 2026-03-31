@@ -24,6 +24,12 @@ Updates the node's name, with a validation rule: **Name must be 30 characters or
 ### `Node.execute()`
 Triggers the node's internal logic. Currently, this prints the node's name and its **`NodeValue`** to the console.
 
+### `Node.add_input_port(name: str, data_type: DataType)`
+Adds a new input port to the node.
+
+### `Node.add_output_port(name: str, data_type: DataType)`
+Adds a new output port to the node.
+
 ### `Node.get_port(id: Uuid)` → `Optional[Port]`
 Searches through all inputs and outputs to find a port matching the specified UUID.
 

@@ -62,13 +62,14 @@ impl Node {
 		}
 	}
 
-	pub fn add_port(&mut self, name: String, data_type: crate::model::datatype::DataType, is_output: bool) {
+	pub fn add_input_port(&mut self, name: String, data_type: crate::model::datatype::DataType) {
 		let port = Port::new(name, data_type);
-		if is_output {
-			self.outputs.push(port);
-		} else {
-			self.inputs.push(port);
-		}
+		self.inputs.push(port);
+	}
+
+	pub fn add_output_port(&mut self, name: String, data_type: crate::model::datatype::DataType) {
+		let port = Port::new(name, data_type);
+		self.outputs.push(port);
 	}
 
 	pub fn get_port(&self, id: Uuid) -> Option<Port> {

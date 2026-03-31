@@ -8,11 +8,11 @@ def test_shape():
     add_node = Node("Arithmetic_Add", (100, 100))
     
     # 2. Add 2 Inputs
-    add_node.add_port("A", DataType.Float, False)
-    add_node.add_port("B", DataType.Float, False)
+    add_node.add_input_port("A", DataType.Float)
+    add_node.add_input_port("B", DataType.Float)
     
     # 3. Add 1 Output
-    add_node.add_port("Result", DataType.Float, True)
+    add_node.add_output_port("Result", DataType.Float)
     
     # 4. Verify structural integrity
     print(f"Node Type: {add_node.name}")
