@@ -1,0 +1,19 @@
+[package]
+name = "blueprint-rs"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "blueprint_rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.28.2", features = ["extension-module", "uuid"] }
+uuid = { version = "1.23.0", features = ["v4"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = 'abort'
+strip = true
