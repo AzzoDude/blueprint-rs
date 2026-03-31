@@ -1,4 +1,5 @@
 use pyo3::{pyclass, pymethods, PyResult, exceptions::PyValueError};
+use crate::model::datatype::NodeValue;
 use uuid::Uuid;
 use crate::model::port::Port;
 
@@ -18,7 +19,10 @@ pub struct Node {
 	pub inputs: Vec<Port>,
 
 	#[pyo3(get)]
-	pub outputs: Vec<Port>
+	pub outputs: Vec<Port>,
+
+	#[pyo3(get, set)]
+	pub value: NodeValue
 }
 
 #[pymethods]
@@ -35,6 +39,7 @@ impl Node {
 			position,
 			inputs: Vec::new(),
 			outputs: Vec::new(),
+			value: NodeValue::None(),
 		})
 	}
 
@@ -45,6 +50,25 @@ impl Node {
 		}
 		self.name = name;
 		Ok(())
+	}
+
+	pub fn execute(&self) {
+		match &self.value {
+			NodeValue::None() => println!("[Node {}] Value: None", self.name),
+			NodeValue::Int(v) => println!("[Node {}] Value: {}", self.name, v),
+			NodeValue::Float(v) => println!("[Node {}] Value: {}", self.name, v),
+			NodeValue::String(v) => println!("[Node {}] Value: {}", self.name, v),
+			NodeValue::Bool(v) => println!("[Node {}] Value: {}", self.name, v),
+		}
+	}
+
+	pub fn add_port(&mut self, name: String, data_type: crate::model::datatype::DataType, is_output: bool) {
+		let port = Port::new(name, data_type);
+		if is_output {
+			self.outputs.push(port);
+		} else {
+			self.inputs.push(port);
+		}
 	}
 
 	pub fn get_port(&self, id: Uuid) -> Option<Port> {

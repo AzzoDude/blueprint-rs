@@ -17,6 +17,7 @@ The following classes are exposed to Python through this entry point:
 - `Port`
 - `Connection`
 - `DataType`
+- `NodeValue`
 
 ## Usage in Python
 
@@ -24,4 +25,5 @@ The following classes are exposed to Python through this entry point:
 import blueprint_rs
 
 # You can now instantiate any of the registered classes
+val = blueprint_rs.NodeValue.Int(42)
 ```

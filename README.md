@@ -27,7 +27,7 @@ For detailed, file-specific documentation and internal architecture, please refe
 | **Logic Nodes** | Core state & lifecycle | [`docs/node.md`](file:///c:/Users/Azzo/Documents/My%20Projects/blueprint-rs/docs/node.md) |
 | **Input/Output Ports** | Signal definition | [`docs/port.md`](file:///c:/Users/Azzo/Documents/My%20Projects/blueprint-rs/docs/port.md) |
 | **Graph Connections** | Relationship mapping | [`docs/connection.md`](file:///c:/Users/Azzo/Documents/My%20Projects/blueprint-rs/docs/connection.md) |
-| **Logic Type System** | Shared type registry | [`docs/datatype.md`](file:///c:/Users/Azzo/Documents/My%20Projects/blueprint-rs/docs/datatype.md) |
+| **Type Storage** | Data & Arithmetic | [`docs/datatype.md`](file:///c:/Users/Azzo/Documents/My%20Projects/blueprint-rs/docs/datatype.md) |
 
 ---
 
@@ -60,6 +60,14 @@ node = Node("Process_Data", (10.0, 50.0))
 
 print(f"Node '{node.name}' identified by: {node.id}")
 ```
+
+---
+
+## Examples
+
+You can find complete demonstration scripts in the [**`examples/`**](file:///c:/Users/Azzo/Documents/My%20Projects/blueprint-rs/examples) directory:
+
+- [**`examples/arithmetic.py`**](file:///c:/Users/Azzo/Documents/My%20Projects/blueprint-rs/examples/arithmetic.py) — Demonstrates basic and mixed-type math logic within the node engine.
 
 ---
 
