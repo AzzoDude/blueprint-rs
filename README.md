@@ -1,5 +1,3 @@
-![blueprint_hero](file:///C:/Users/Azzo/.gemini/antigravity/brain/73b02f65-c16b-458d-9e40-5f57af147695/blueprint_hero_1774987758320.png)
-
 # blueprint-rs — Independent Visual Scripting Engine
 
 A high-performance, graph-based logic engine written in Rust and exposed to Python via PyO3. Designed to be the core backend for standalone visual scripting platforms.
