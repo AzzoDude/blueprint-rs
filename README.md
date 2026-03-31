@@ -1,4 +1,4 @@
-# blueprint-rs — Independent Visual Scripting Engine
+# blueprint-rs — Visual Scripting Framework 
 
 A high-performance, graph-based logic engine written in Rust and exposed to Python via PyO3. Designed to be the core backend for standalone visual scripting platforms.
 
